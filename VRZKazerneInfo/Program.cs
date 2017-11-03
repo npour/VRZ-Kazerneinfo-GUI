@@ -3,6 +3,9 @@ using Gtk;
 
 namespace VRZKazerneInfo
 {
+	/// <summary>
+	/// Main class where the program is executed
+	/// </summary>
 	class MainClass
 	{
 		public static void Main(string[] args)
