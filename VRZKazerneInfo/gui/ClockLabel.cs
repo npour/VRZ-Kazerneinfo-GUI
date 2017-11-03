@@ -10,8 +10,6 @@ namespace VRZKazerneInfo
     /// </summary>
     public class ClockLabel : Gtk.Label
     {
-        private string text;
-
         public ClockLabel()
         {
             this.Text = DateTime.Now.ToString("HH:mm:ss");
