@@ -8,7 +8,7 @@ namespace VRZKazerneInfo
 
     public partial class MainWindow : Gtk.Window
     {
-        private Label clockLabel;
+        private ClockLabel clockLabel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
@@ -17,7 +17,7 @@ namespace VRZKazerneInfo
         public MainWindow (string title) : base (title)
         {
             var label = new Label ("Vandaag prachtig weer");
-            var clockLabel = new ClockLabel ();
+            this.clockLabel = new ClockLabel ();
 
             var vbox = new VBox ();
             base.ModifyBg (StateType.Normal, new Gdk.Color (0, 0, 0));
