@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Gtk;
 
 namespace VRZKazerneInfo
@@ -12,6 +13,10 @@ namespace VRZKazerneInfo
 		{
 			Application.Init();
 			MainWindow win = new MainWindow("klok");
+            int[] numbers = { 1, 4, 3, 10 };
+            List<int> list = new List<int> (numbers);
+            Sorting.bubbleSort(list);
+            System.Console.WriteLine (list);
 			win.Show();
 			Application.Run();
 		}

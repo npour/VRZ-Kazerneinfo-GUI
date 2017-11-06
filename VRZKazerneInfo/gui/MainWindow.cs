@@ -5,7 +5,6 @@ using Pango;
 
 namespace VRZKazerneInfo
 {
-
     public partial class MainWindow : Gtk.Window
     {
         private ClockLabel clockLabel;
@@ -21,9 +20,8 @@ namespace VRZKazerneInfo
 
             var vbox = new VBox ();
             base.ModifyBg (StateType.Normal, new Gdk.Color (0, 0, 0));
-		
             label.ModifyFg (StateType.Normal, new Gdk.Color (12, 237, 4));
-		
+	   
             vbox.Add (clockLabel);
             clockLabel.Show ();
 
