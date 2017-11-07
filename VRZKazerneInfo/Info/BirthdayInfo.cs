@@ -8,7 +8,9 @@ namespace VRZKazerneInfo
         {
         }
 
-
+        public override void parseMessage(string message)
+        {
+        }
     }
 }
 

@@ -19,12 +19,9 @@ namespace VRZKazerneInfo
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
         }
 
-        private InfoItem client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+        private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            switch (e.Topic) {
-            case "/weather":
-                return new WeatherInfo ();
-            }
+            Console.WriteLine ("LOLZ");
         }
       
     }
