@@ -22,6 +22,7 @@ namespace VRZKazerneInfo
                 client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
             }
             catch(Exception e) {
+                Console.WriteLine (e.Message);
                 Console.WriteLine ("Could not connect to MQTT Broker");
             }
 
@@ -30,6 +31,8 @@ namespace VRZKazerneInfo
         private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             Console.WriteLine ("MQTT Received");
+            Console.WriteLine ("Topic: " + e.Topic);
+            Console.WriteLine ("Message: " + e.Message);
         }
       
     }
