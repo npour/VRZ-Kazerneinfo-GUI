@@ -13,10 +13,7 @@ namespace VRZKazerneInfo
 		{
 			Application.Init();
 			MainWindow win = new MainWindow("klok");
-            int[] numbers = { 1, 4, 3, 10 };
-            List<int> list = new List<int> (numbers);
-            Sorting.bubbleSort(list);
-            System.Console.WriteLine (list);
+            MqttUpdater updater = new MqttUpdater ();
 			win.Show();
 			Application.Run();
 		}
