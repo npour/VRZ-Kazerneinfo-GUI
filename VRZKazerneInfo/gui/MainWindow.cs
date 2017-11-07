@@ -5,6 +5,9 @@ using Pango;
 
 namespace VRZKazerneInfo
 {
+    /// <summary>
+    /// Main window of the application
+    /// </summary>
     public partial class MainWindow : Gtk.Window
     {
         private ClockLabel clockLabel;
