@@ -70,6 +70,7 @@
     <Compile Include="Info\InfoItem.cs" />
     <Compile Include="Info\WeatherInfo.cs" />
     <Compile Include="Info\BirthdayInfo.cs" />
+    <Compile Include="gui\NewsMessageView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

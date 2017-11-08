@@ -8,7 +8,10 @@ namespace VRZKazerneInfo
         {
         }
 
-
+        public override void parseMessage (string message)
+        {
+            throw new NotImplementedException ();
+        }
     }
 }
 

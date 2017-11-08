@@ -2,15 +2,18 @@
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Net;
+using System.Collections.Generic;
 
 namespace VRZKazerneInfo
 {
     public class MqttUpdater
     {
         private MqttClient client;
+        private List<WeatherInfo> weatherItems;
 
         public MqttUpdater()
         {
+            weatherItems = new List<WeatherInfo> ();
             // This should be updated by the actual hostname of the MQTT broker
             client = new MqttClient("BrokerHostname");
             string[] topics = {"/weather", "/traffic"};
@@ -19,11 +22,12 @@ namespace VRZKazerneInfo
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
         }
 
-        private InfoItem client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+        private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             switch (e.Topic) {
             case "/weather":
-                return new WeatherInfo ();
+                weatherItems.Add(new WeatherInfo());
+                break;
             }
         }
       
