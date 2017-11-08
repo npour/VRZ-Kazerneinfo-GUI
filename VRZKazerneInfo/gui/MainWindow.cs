@@ -34,6 +34,11 @@ namespace VRZKazerneInfo
             vbox.Show ();
         }
 
+        public void updateGuiFromMqtt(string topic, string message)
+        {
+            
+        }
+
         protected void OnDeleteEvent (object sender, DeleteEventArgs a)
         {
             Application.Quit ();

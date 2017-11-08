@@ -8,8 +8,15 @@ namespace VRZKazerneInfo
     public class MqttUpdater
     {
         private MqttClient client;
+        private MainWindow mainWindow;
 
-        public MqttUpdater()
+        public MqttUpdater(MainWindow mainWindow)
+        {
+            this.initClient ();
+            this.mainWindow = mainWindow;
+        }
+
+        private void initClient()
         {
             // This should be updated by the actual hostname of the MQTT broker
             client = new MqttClient("localhost");
@@ -25,14 +32,15 @@ namespace VRZKazerneInfo
                 Console.WriteLine (e.Message);
                 Console.WriteLine ("Could not connect to MQTT Broker");
             }
-
         }
 
         private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
+            var message = System.Text.Encoding.Default.GetString (e.Message);
+            this.mainWindow.updateGuiFromMqtt (e.Topic, message);
             Console.WriteLine ("MQTT Received");
             Console.WriteLine ("Topic: " + e.Topic);
-            Console.WriteLine ("Message: " + e.Message);
+            Console.WriteLine ("Message: " + message);
         }
       
     }

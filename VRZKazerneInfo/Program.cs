@@ -13,7 +13,7 @@ namespace VRZKazerneInfo
 		{
 			Application.Init();
 			MainWindow win = new MainWindow("klok");
-            MqttUpdater updater = new MqttUpdater ();
+            MqttUpdater updater = new MqttUpdater (win);
 			win.Show();
 			Application.Run();
 		}
