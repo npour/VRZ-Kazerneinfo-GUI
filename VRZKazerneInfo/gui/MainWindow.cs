@@ -11,6 +11,7 @@ namespace VRZKazerneInfo
     public partial class MainWindow : Gtk.Window
     {
         private ClockLabel clockLabel;
+        private NewsMessageView newsTabel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
@@ -23,7 +24,7 @@ namespace VRZKazerneInfo
             var newsLabel = new Label ("News label.");        
             newsLabel.Show ();
 
-            var newsTabel = new NewsMessageView ();
+            newsTabel = new NewsMessageView ();
             //newsTabel.Sensitive = false;
             newsTabel.Show ();
 
@@ -68,7 +69,15 @@ namespace VRZKazerneInfo
 
         public void updateGuiFromMqtt(string topic, string message)
         {
-            
+            switch (topic) {
+            case "/news":
+                newsTabel.newsMessageListStore.AppendValues ("Testpersoon", "12-11-2017", message);
+                break;
+            case "/weather":
+                break;
+            default:
+                throw new NotImplementedException ();
+            }
         }
 
         protected void OnDeleteEvent (object sender, DeleteEventArgs a)

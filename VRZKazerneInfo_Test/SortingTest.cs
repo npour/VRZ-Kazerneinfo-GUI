@@ -27,6 +27,10 @@ namespace VRZKazerneInfo_Test
                 Assert.AreEqual (testList [i], testList2 [i]);
             }
         }
+
+        // TODO: Test with empty list and other failures
+        // TODO: Test with different types since sorting method is generic
+        // TODO: Test with same types
     }
 }
 

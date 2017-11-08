@@ -7,7 +7,7 @@ namespace VRZKazerneInfo
     /// </summary>
     public class WeatherInfo : InfoItem
     {
-        private string temperature;
+        private string temperature { get; set;}
        
         /// <summary>
         /// Parses the message.
