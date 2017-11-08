@@ -2,6 +2,7 @@
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using System.Net;
+using System.Collections.Generic;
 
 namespace VRZKazerneInfo
 {

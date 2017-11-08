@@ -27,12 +27,12 @@ namespace VRZKazerneInfo
         {
             this.ModifyFg(StateType.Normal, new Gdk.Color(12, 237, 4));
             FontDescription fontDescription = new FontDescription();
-            fontDescription.Size = Convert.ToInt32 (74.0 * Pango.Scale.PangoScale);
+            fontDescription.Size = Convert.ToInt32 (48.0 * Pango.Scale.PangoScale);
             this.ModifyFont (fontDescription);
             this.Justify = Justification.Fill;
         }
 
-        /// <summary>
+        /// <summary>W
         /// Initializes the timer. Updates the clock each second
         /// </summary>
         private void initializeTimer()
