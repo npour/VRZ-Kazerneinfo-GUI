@@ -42,10 +42,14 @@ namespace VRZKazerneInfo_Test
             testList2.Add (8);
             testList2.Add (10);
             Sorting.quickSort (testList);
+            bool difference = false;
             for(int i = 0; i < testList.Count; i++) 
             {
-                Assert.AreEqual (testList [i], testList2 [i]);
+                if (testList [i].CompareTo (testList2 [i]) != 0) {
+                    difference = true;
+                }
             }
+            Assert.False (difference);
         }
 
         // TODO: Test with empty list and other failures
