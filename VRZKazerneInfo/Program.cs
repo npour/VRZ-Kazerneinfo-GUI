@@ -16,6 +16,8 @@ namespace VRZKazerneInfo
 			Application.Init();
 			MainWindow win = new MainWindow("klok");
             MqttUpdater updater = new MqttUpdater (win);
+            Sorting sorting = new Sorting ();
+            sorting.compareSorting (1000);
 			win.Show();
 			Application.Run();
 		}

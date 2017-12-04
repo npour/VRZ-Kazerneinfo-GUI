@@ -9,8 +9,7 @@ namespace VRZKazerneInfo
     public abstract class InfoItem
     {
         private string infoToDisplay { get; set; }
-
-        abstract public void parseMessage(string message);
+        public abstract void updateGui(MainWindow window);
     }
 }
 

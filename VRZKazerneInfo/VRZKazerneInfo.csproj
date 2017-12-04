@@ -71,6 +71,8 @@
     <Compile Include="Info\WeatherInfo.cs" />
     <Compile Include="Info\BirthdayInfo.cs" />
     <Compile Include="gui\NewsMessageView.cs" />
+    <Compile Include="Info\NewsItem.cs" />
+    <Compile Include="Info\InfoItemFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

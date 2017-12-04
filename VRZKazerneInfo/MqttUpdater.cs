@@ -47,13 +47,9 @@ namespace VRZKazerneInfo
         /// <param name="e">E.</param>
         private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            var message = System.Text.Encoding.Default.GetString (e.Message);
-            this.mainWindow.updateGuiFromMqtt (e.Topic, message);
-            Console.WriteLine ("MQTT Received");
-            Console.WriteLine ("Topic: " + e.Topic);
-            Console.WriteLine ("Message: " + message);
+            InfoItem item = InfoItemFactory.createInfoItem (e.Topic, e.Message);
+            item.updateGui (this.mainWindow);
         }
       
     }
 }
-

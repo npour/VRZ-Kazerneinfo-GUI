@@ -17,7 +17,6 @@ namespace VRZKazerneInfo
             authorCell.BackgroundGdk = new Gdk.Color (0, 0, 0);
             this.authorColumn.PackStart (authorCell, true);
             this.authorColumn.AddAttribute (authorCell, "text", 0);
-
             this.dateColumn = new TreeViewColumn ();
             dateColumn.Title = "Datum";
             CellRendererText dateCell = new Gtk.CellRendererText ();

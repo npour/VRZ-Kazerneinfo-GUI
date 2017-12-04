@@ -11,7 +11,7 @@ namespace VRZKazerneInfo
     public partial class MainWindow : Gtk.Window
     {
         private ClockLabel clockLabel;
-        private NewsMessageView newsTabel;
+        public NewsMessageView newsTabel { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.

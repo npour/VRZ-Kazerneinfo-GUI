@@ -8,15 +8,9 @@ namespace VRZKazerneInfo
     public class WeatherInfo : InfoItem
     {
         private string temperature { get; set;}
-       
-        /// <summary>
-        /// Parses the message.
-        /// </summary>
-        /// <param name="message">Message.</param>
-        public override void parseMessage(string message)
+
+        public override void updateGui(MainWindow window)
         {
-            //TODO: Implement this method
-            throw new NotImplementedException();
         }
     }
 }

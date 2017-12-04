@@ -13,10 +13,8 @@ namespace VRZKazerneInfo
         {
         }
 
-        public override void parseMessage(string message)
+        public override void updateGui(MainWindow window)
         {
-            //TODO Implement method
-            throw new NotImplementedException();
         }
     }
 }
