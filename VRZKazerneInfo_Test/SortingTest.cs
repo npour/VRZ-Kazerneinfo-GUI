@@ -22,10 +22,14 @@ namespace VRZKazerneInfo_Test
             testList2.Add (8);
             testList2.Add (10);
             Sorting.bubbleSort (testList);
+            bool difference = false;
             for(int i = 0; i < testList.Count; i++) 
             {
-                Assert.AreEqual (testList [i], testList2 [i]);
+                if (testList [i].CompareTo (testList2[i]) != 0) {
+                    difference = true;
+                }
             }
+            Assert.IsFalse (difference);
         }
 
         [Test]
@@ -61,6 +65,14 @@ namespace VRZKazerneInfo_Test
         {
             List<int> testList = new List<int> ();
             Sorting.bubbleSort (testList);
+            Assert.AreEqual (testList.Count, 0);
+        }
+
+        [Test]
+        public void emptyListQuickSortTest()
+        {
+            List<int> testList = new List<int> ();
+            Sorting.quickSort (testList);
             Assert.AreEqual (testList.Count, 0);
         }
     }
