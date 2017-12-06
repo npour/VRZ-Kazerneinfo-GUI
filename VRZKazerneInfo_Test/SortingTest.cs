@@ -75,6 +75,29 @@ namespace VRZKazerneInfo_Test
             Sorting.quickSort (testList);
             Assert.AreEqual (testList.Count, 0);
         }
+
+        [Test]
+        public void stringListBubbleSortTest()
+        {
+            List<string> testListSorted = new List<string> ();
+            List<string> testList = new List<string> ();
+            testListSorted.Add ("a");
+            testListSorted.Add ("b");
+            testListSorted.Add ("c");
+            testListSorted.Add ("d");
+            testList.Add ("b");
+            testList.Add ("a");
+            testList.Add ("d");
+            testList.Add ("c");
+            Sorting.bubbleSort (testList);
+            bool isSame = true;
+            for (int i = 0; i < testList.Count; i++) {
+                if (testList [i] != testListSorted [i]) {
+                    isSame = false;
+                }
+            }
+            Assert.IsTrue (isSame);
+        }
     }
 }
 
