@@ -35,27 +35,10 @@ namespace VRZKazerneInfo
         {
             NewsItem item = new NewsItem ();
             var messageString = System.Text.Encoding.ASCII.GetString (message);
-            Console.WriteLine (messageString);
-            /*
-            int nullsEncountered = 0;
-            int latestIndex = 0;
-            var nullByte = new byte { 0 };
-            for (int i = 0; i < message.Length; i++) {
-                if (message [i] == nullByte) {
-                    nullsEncountered += 1;
-                    switch (nullsEncountered) {
-                    case 1:
-                        item.author = System.Text.Encoding.UTF8.GetString ((message.Take (i - 1).ToArray ()));
-                        item.date = DateTime.Parse (System.Text.Encoding.UTF8.GetString (message.Skip (i + 1).Take (16).ToArray ()));
-                        latestIndex = i + 17;
-                        break;
-                    case 2:
-                        item.message = System.Text.Encoding.UTF8.GetString (message.Skip (17).Take (i - 1).ToArray ());
-                        break;
-                    }
-                }
-            }
-            */
+            var splittedString = messageString.Split ('|');
+            item.date = DateTime.Parse(splittedString [0]);
+            item.author = splittedString [1];
+            item.message = splittedString [2];
             return item;
         }
     }
