@@ -21,7 +21,7 @@ namespace VRZKazerneInfo
 
         public override void updateGui(MainWindow window)
         {
-            object[] values = { this.author, this.date, this.message }; 
+            object[] values = { this.author, this.date.ToString("dd-MM-yyyy"), this.message }; 
             window.newsTabel.newsMessageListStore.AppendValues(values);
         }
 }
