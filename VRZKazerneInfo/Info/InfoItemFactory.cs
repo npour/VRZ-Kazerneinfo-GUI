@@ -31,6 +31,11 @@ namespace VRZKazerneInfo
             throw new NotImplementedException ();
         }
 
+        /// <summary>
+        /// Creates and parses the news item from message.
+        /// </summary>
+        /// <returns>The news item from message.</returns>
+        /// <param name="message">Message.</param>
         private static NewsItem createNewsItemFromMessage(byte[] message)
         {
             NewsItem item = new NewsItem ();
