@@ -52,7 +52,7 @@ namespace VRZKazerneInfo
                 item.updateGui (this.mainWindow);
             }
             catch(MqttMessageParsingException exception) {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(exception.Message);
             }
 
         }
