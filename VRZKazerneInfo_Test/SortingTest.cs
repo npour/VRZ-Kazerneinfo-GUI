@@ -11,29 +11,16 @@ namespace VRZKazerneInfo_Test
         [Test]
         public void integerBubbleSortTest()
         {
-            List<int> testList = new List<int> ();
-            List<int> testList2 = new List<int> ();
-            testList.Add (1);
-            testList.Add (0);
-            testList.Add (10);
-            testList.Add (8);
-            testList2.Add (0);
-            testList2.Add (1);
-            testList2.Add (8);
-            testList2.Add (10);
-            Sorting.bubbleSort (testList);
-            bool difference = false;
-            for(int i = 0; i < testList.Count; i++) 
-            {
-                if (testList [i].CompareTo (testList2[i]) != 0) {
-                    difference = true;
-                }
-            }
-            Assert.IsFalse (difference);
+            this.integerListTest ("bubble");
         }
 
         [Test]
         public void integerQuickSortTest()
+        {
+            this.integerListTest ("quicksort");
+        }
+
+        private void integerListTest(string sortMethod)
         {
             List<int> testList = new List<int> ();
             List<int> testList2 = new List<int> ();
@@ -45,7 +32,7 @@ namespace VRZKazerneInfo_Test
             testList2.Add (1);
             testList2.Add (8);
             testList2.Add (10);
-            Sorting.quickSort (testList);
+            this.sortList (testList, sortMethod);
             bool difference = false;
             for(int i = 0; i < testList.Count; i++) 
             {
@@ -79,6 +66,17 @@ namespace VRZKazerneInfo_Test
         [Test]
         public void stringListBubbleSortTest()
         {
+            testStringList ("bubble");
+        }
+
+        [Test]
+        public void stringListQuickSortTest()
+        {
+            testStringList ("quicksort");
+        }
+
+        private void testStringList(string sortMethod)
+        {
             List<string> testListSorted = new List<string> ();
             List<string> testList = new List<string> ();
             testListSorted.Add ("a");
@@ -89,7 +87,7 @@ namespace VRZKazerneInfo_Test
             testList.Add ("a");
             testList.Add ("d");
             testList.Add ("c");
-            Sorting.bubbleSort (testList);
+            this.sortList (testList, sortMethod);
             bool isSame = true;
             for (int i = 0; i < testList.Count; i++) {
                 if (testList [i] != testListSorted [i]) {
@@ -97,6 +95,23 @@ namespace VRZKazerneInfo_Test
                 }
             }
             Assert.IsTrue (isSame);
+        }
+
+        /// <summary>
+        /// Check which sorting method to use based on string
+        /// Makes testing easier
+        /// </summary>
+        /// <param name="list">List.</param>
+        /// <param name="sortMethod">Sort method.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        private void sortList<T>(IList<T> list, string sortMethod) where T: IComparable<T> 
+        {
+            if (sortMethod == "bubble") {
+                Sorting.bubbleSort (list);
+            }
+            else {
+                Sorting.quickSort (list);
+            }
         }
     }
 }
