@@ -47,8 +47,14 @@ namespace VRZKazerneInfo
         /// <param name="e">E.</param>
         private void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            InfoItem item = InfoItemFactory.createInfoItem (e.Topic, e.Message);
-            item.updateGui (this.mainWindow);
+            try {
+                InfoItem item = InfoItemFactory.createInfoItem (e.Topic, e.Message);
+                item.updateGui (this.mainWindow);
+            }
+            catch(MqttMessageParsingException exception) {
+                Console.WriteLine(e.Message);
+            }
+
         }
       
     }

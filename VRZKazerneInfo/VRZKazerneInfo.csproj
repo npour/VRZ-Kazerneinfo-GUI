@@ -73,6 +73,7 @@
     <Compile Include="gui\NewsMessageView.cs" />
     <Compile Include="Info\NewsItem.cs" />
     <Compile Include="Info\InfoItemFactory.cs" />
+    <Compile Include="Info\MqttMessageParsingException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -36,7 +36,15 @@ namespace VRZKazerneInfo
             NewsItem item = new NewsItem ();
             var messageString = System.Text.Encoding.ASCII.GetString (message);
             var splittedString = messageString.Split ('|');
-            item.date = DateTime.Parse(splittedString [0]);
+            if (splittedString.Count() != 3) {
+                throw new MqttMessageParsingException ("Error at parsing");
+            }
+            try {
+                item.date = DateTime.Parse(splittedString [0]);
+            }
+            catch (FormatException e) {
+                throw new MqttMessageParsingException ("Date could not be parsed");
+            }
             item.author = splittedString [1];
             item.message = splittedString [2];
             return item;
